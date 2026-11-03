@@ -1,10 +1,10 @@
 // Latihan JavaScript Dasar - Minggu 06
 // Kalkulator nilai rapor di Console
 // 1. Pesan pertama ke Console
-console.log("Halo, saya Andi!");
+console.log("Halo, saya Aulia!");
 console.log("Ini latihan JavaScript pertamaku.");
 // 2. Data siswa
-const nama = "Andi Pratama";
+const nama = "Aulia Fitri Halimah";
 const kelas = "X PPLG 1";
 const kkm = 75;
 let nilaiTugas = 85;
@@ -53,6 +53,6 @@ console.log(`predikat(84) = ${predikat(84)}`); // B
 console.log(`predikat(70) = ${predikat(70)}`); // C
 console.log(`predikat(69) = ${predikat(69)}`); // D
 // 6. Rapor beberapa siswa
-console.log(rapor("Andi", 85, 78, 89));
+console.log(rapor("Aulia", 85, 78, 89));
 console.log(rapor("Sinta", 92, 88, 96));
 console.log(rapor("Budi", 70, 65, 72));
