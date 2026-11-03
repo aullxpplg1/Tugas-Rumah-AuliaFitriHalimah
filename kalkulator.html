@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aulia Fitri Halimah | Kalkulator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/kalkulator.css">
+</head>
+<body>
+  <header>
+    <div class="container navbar">
+      <h1>Aulia Fitri Halimah</h1>
+      <nav class="menu-laptop">
+        <ul>
+          <li><a href="index.html">Beranda</a></li>
+          <li><a href="proyek.html">Proyek</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="kalkulator.html">Kalkulator</a></li>
+        </ul>
+      </nav>
+      <details class="menu-ponsel">
+        <summary>Menu</summary>
+        <nav>
+          <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="proyek.html">Proyek</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+            <li><a href="kalkulator.html">Kalkulator</a></li>
+          </ul>
+        </nav>
+      </details>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="kartu">
+        <h2>Kalkulator Saya</h2>
+
+        <form>
+          <p>
+            <label for="inputTugas">Nilai Tugas</label><br>
+            <input type="number" id="nilaiTugas" name="Nilai Tugas" placeholder="Contoh: 85" required>
+          </p>
+          <p>
+            <label for="inputUts">Nilai UTS</label><br>
+            <input type="number" id="nilaiUts" name="Nilai UTS" placeholder="Contoh: 80" required>
+          </p>
+          <p>
+            <label for="inputUas">Nilai UAS</label><br>
+            <input type="number" id="nilaiUas" name="Nilai UAS" placeholder="Contoh: 90" required>
+          </p>
+          <button type="submit" id="submit">Hitung</button>
+       <div id="hasil" class="hasil"></div> 
+      </form> 
+      </section>
+    </div>
+   
+  </main>
+
+  <footer>
+    <p>Kontak: <a href="mailto:aull.xpplg1@gamil.com">Gmail</a> |
+      <a href="https://github.com/aullxpplg1" target="_blank">GitHub</a> |
+      <a href="https://www.youtube.com/@aull_2409" target="_blank">YouTube</a></p>
+    <p> &copy; 2026 Aulia Fitri Halimah. Dibuat di Kelas Industri UBIG.</p>
+  </footer>
+
+  <script src="js/latihan.js"></script>
+  <script src="js/kalkulator.js"></script>
+</body>
+</html>

@@ -32,7 +32,7 @@ function rapor(namaSiswa, tugas, uts, uas) {
  return `${namaSiswa}: rata-rata ${rata}, predikat $
 {predikat(rata)}`;
 }
-// 4. Hasil nilai Andi
+// 4. Hasil nilai Aulia
 const rataRata = hitungRataRata(nilaiTugas, nilaiUts, nilaiUas);
 const lulus = rataRata >= kkm;
 const dapatSertifikat = lulus && kehadiran >= 80;
