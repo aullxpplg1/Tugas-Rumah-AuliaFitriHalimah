@@ -14,3 +14,4 @@ tombol.addEventListener("click", (e) => {
   const rata = hitungRataRata(tugas, uts, uas);
   hasil.textContent = `Rata-rata ${rata.toFixed(2)}, predikat ${predikat(rata)}`;
 });
+// 
