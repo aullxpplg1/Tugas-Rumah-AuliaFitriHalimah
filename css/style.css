@@ -1,9 +1,14 @@
+
 /* Gaya portofolio Aulia Fitri Halimah
    Palet: #1D3557 (utama), #E63946 (aksen), #F1FAEE (latar)
    Huruf: Poppins (judul), Inter (isi)
    Tata letak: mobile first, titik ubah 768px (tablet) dan 1024px (laptop) */
 
-/* 1. Reset */
+
+/* =================================
+   1. RESET
+================================= */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,18 +19,36 @@ img {
   height: auto;
 }
 
-/* 2. Dasar halaman: warna dan huruf */
+
+/* =================================
+   2. VARIABEL WARNA
+================================= */
+
+:root {
+  --warna-teks: #333333;
+  --warna-latar: #F1FAEE;
+  --warna-kartu: #FFFFFF;
+  --warna-utama: #1D3557;
+  --warna-aksen: #E63946;
+  --warna-border: #DDDDDD;
+}
+
+
+/* =================================
+   3. DASAR HALAMAN
+================================= */
+
 body {
   font-family: "Inter", Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  color: #333333;
-  background-color: #F1FAEE;
+  color: var(--warna-teks);
+  background-color: var(--warna-latar);
 }
 
 h1, h2, h3 {
   font-family: "Poppins", Arial, sans-serif;
-  color: #1D3557;
+  color: var(--warna-utama);
   line-height: 1.3;
 }
 
@@ -38,10 +61,14 @@ p, ul, ol {
 }
 
 a {
-  color: #E63946;
+  color: var(--warna-aksen);
 }
 
-/* 3. Wadah, header, dan menu */
+
+/* =================================
+   4. HEADER DAN NAVBAR
+================================= */
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -84,7 +111,13 @@ nav a {
   text-decoration: none;
 }
 
-/* Tantangan: menu ponsel buka-tutup dengan details */
+nav a:hover {
+  background-color: #E63946;
+}
+
+
+/* Menu ponsel */
+
 .menu-laptop {
   display: none;
 }
@@ -102,7 +135,11 @@ nav a {
   margin-top: 0.5rem;
 }
 
-/* 4. Isi utama, hero, dan kartu */
+
+/* =================================
+   5. ISI UTAMA DAN HERO
+================================= */
+
 main {
   padding: 1.5rem 0;
 }
@@ -125,6 +162,9 @@ main {
   font-size: 2rem;
 }
 
+
+/* Tombol utama */
+
 .tombol {
   display: inline-block;
   padding: 0.75rem 1.5rem;
@@ -135,11 +175,16 @@ main {
   text-decoration: none;
 }
 
+
+/* =================================
+   6. KARTU
+================================= */
+
 .kartu {
-  background-color: #FFFFFF;
+  background-color: var(--warna-kartu);
   padding: 1rem;
   margin-bottom: 1.5rem;
-  border: 1px solid #DDDDDD;
+  border: 1px solid var(--warna-border);
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
@@ -158,10 +203,14 @@ main {
 
 article img {
   border-radius: 8px;
-  border: 1px solid #DDDDDD;
+  border: 1px solid var(--warna-border);
 }
 
-/* 5. Tabel */
+
+/* =================================
+   7. TABEL
+================================= */
+
 table {
   border-collapse: collapse;
 }
@@ -183,7 +232,11 @@ th {
   color: #FFFFFF;
 }
 
-/* 6. Form */
+
+/* =================================
+   8. FORM KONTAK
+================================= */
+
 label {
   font-weight: 600;
 }
@@ -197,7 +250,24 @@ input, select, textarea {
   border-radius: 6px;
   font-family: inherit;
   font-size: 1rem;
+  color: var(--warna-teks);
+  background-color: var(--warna-kartu);
 }
+
+
+/* Penghitung karakter */
+
+#hitung-karakter {
+  font-size: 0.9rem;
+  color: #666666;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+
+/* =================================
+   9. TOMBOL
+================================= */
 
 button {
   padding: 0.75rem 1.5rem;
@@ -209,9 +279,53 @@ button {
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-/* 7. Footer */
+button:hover {
+  opacity: 0.85;
+}
+
+
+/* =================================
+   10. FILTER PROYEK
+================================= */
+
+.filter-proyek {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.tombol-filter {
+  padding: 0.6rem 1.2rem;
+  background-color: #FFFFFF;
+  color: #1D3557;
+  border: 1px solid #1D3557;
+  border-radius: 6px;
+}
+
+/* Tombol filter aktif */
+
+.tombol-filter.aktif {
+  background-color: #1D3557;
+  color: #FFFFFF;
+}
+
+/* Efek hover filter */
+
+.tombol-filter:hover {
+  background-color: #1D3557;
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+
+/* =================================
+   11. FOOTER
+================================= */
+
 footer {
   background-color: #1D3557;
   color: #F1FAEE;
@@ -227,8 +341,90 @@ footer a {
   color: #FFFFFF;
 }
 
-/* 8. Tablet: lebar layar 768px ke atas */
+
+/* =================================
+   12. MODE GELAP
+================================= */
+
+body.gelap {
+  --warna-teks: #F1FAEE;
+  --warna-latar: #121212;
+  --warna-kartu: #1E1E1E;
+  --warna-utama: #A8C7FA;
+  --warna-aksen: #FF6B6B;
+  --warna-border: #444444;
+
+  color: var(--warna-teks);
+  background-color: var(--warna-latar);
+}
+
+/* Judul saat mode gelap */
+
+body.gelap h1,
+body.gelap h2,
+body.gelap h3 {
+  color: var(--warna-utama);
+}
+
+/* Kartu saat mode gelap */
+
+body.gelap .kartu {
+  background-color: var(--warna-kartu);
+  border-color: var(--warna-border);
+}
+
+/* Form saat mode gelap */
+
+body.gelap input,
+body.gelap select,
+body.gelap textarea {
+  color: var(--warna-teks);
+  background-color: var(--warna-kartu);
+  border-color: var(--warna-border);
+}
+
+/* Tabel saat mode gelap */
+
+body.gelap td {
+  border-color: var(--warna-border);
+}
+
+body.gelap th {
+  background-color: #263B59;
+}
+
+/* Penghitung karakter saat mode gelap */
+
+body.gelap #hitung-karakter {
+  color: #CCCCCC;
+}
+
+/* Tombol filter saat mode gelap */
+
+body.gelap .tombol-filter {
+  background-color: #1E1E1E;
+  color: #F1FAEE;
+  border-color: #A8C7FA;
+}
+
+body.gelap .tombol-filter.aktif {
+  background-color: #A8C7FA;
+  color: #121212;
+}
+
+body.gelap .tombol-filter:hover {
+  background-color: #A8C7FA;
+  color: #121212;
+}
+
+
+/* =================================
+   13. TABLET
+   Lebar layar 768px ke atas
+================================= */
+
 @media (min-width: 768px) {
+
   .menu-laptop {
     display: block;
   }
@@ -246,10 +442,17 @@ footer a {
   .kartu {
     padding: 1.5rem;
   }
+
 }
 
-/* 9. Laptop: lebar layar 1024px ke atas */
+
+/* =================================
+   14. LAPTOP
+   Lebar layar 1024px ke atas
+================================= */
+
 @media (min-width: 1024px) {
+
   main {
     padding: 2.5rem 0;
   }
@@ -261,4 +464,5 @@ footer a {
   .hero h2 {
     font-size: 2.75rem;
   }
+
 }
