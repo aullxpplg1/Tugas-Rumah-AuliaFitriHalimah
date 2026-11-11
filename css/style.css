@@ -447,8 +447,7 @@ body.gelap .tombol-filter:hover {
 
 
 /* =================================
-   14. LAPTOP
-   Lebar layar 1024px ke atas
+   14. LAPTOP Lebar layar 1024px ke atas
 ================================= */
 
 @media (min-width: 1024px) {
@@ -466,3 +465,4 @@ body.gelap .tombol-filter:hover {
   }
 
 }
+
