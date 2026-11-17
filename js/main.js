@@ -1,31 +1,37 @@
+// 1. Daftar keahlian dari JSON
 
-/* =================================
-   1. ARRAY KEAHLIAN - BERANDA
-================================= */
-
-const daftarSkill = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "Desain Web",
-  "UI/UX Design"
-];
-
-const tempatSkill = document.querySelector("#daftar-skill");
+const daftarSkill = document.querySelector("#daftar-skill");
 const jumlahSkill = document.querySelector("#jumlah-skill");
 
-if (tempatSkill) {
-  daftarSkill.forEach(function(skill) {
-    const item = document.createElement("li");
-    item.textContent = skill;
-    tempatSkill.appendChild(item);
-  });
+async function muatKeahlian() {
+  try {
+    const response = await fetch("data/keahlian.json");
 
-  if (jumlahSkill) {
+    if (!response.ok) {
+      throw new Error(`Status ${response.status}`);
+    }
+
+    const skills = await response.json();
+
+    skills.forEach((skill) => {
+      const item = document.createElement("li");
+      item.textContent = `${skill.nama} (${skill.level})`;
+      daftarSkill.appendChild(item);
+    });
+
     jumlahSkill.textContent =
-      "Jumlah keahlian: " + daftarSkill.length;
+      `Ada ${skills.length} keahlian yang sedang saya kembangkan.`;
+
+  } catch (error) {
+    jumlahSkill.textContent = "Daftar keahlian gagal dimuat.";
+    console.error(error);
   }
 }
+
+if (daftarSkill) {
+  muatKeahlian();
+}
+
 
 
 /* =================================
@@ -189,4 +195,62 @@ if (tempatProyek) {
 
   });
 
+}
+
+/* =================================
+   6. REPOSITORI GITHUB
+================================= */
+
+const username = "aullxpplg1";
+
+const alamatRepo =
+  `https://api.github.com/users/${username}/repos`;
+
+const pilihan = "?sort=updated&per_page=6";
+
+const daftarRepo = document.querySelector("#daftar-repo");
+const statusRepo = document.querySelector("#status-repo");
+
+async function ambilRepo() {
+
+  statusRepo.textContent = "Memuat...";
+
+  try {
+    const response = await fetch(alamatRepo + pilihan);
+
+    if (!response.ok) {
+      throw new Error(`Status ${response.status}`);
+    }
+
+    const repos = await response.json();
+
+    daftarRepo.innerHTML = "";
+
+    repos.forEach((repo) => {
+      const item = document.createElement("li");
+      const tautan = document.createElement("a");
+
+      tautan.href = repo.html_url;
+      tautan.target = "_blank";
+      tautan.textContent = repo.name;
+
+      item.appendChild(tautan);
+      daftarRepo.appendChild(item);
+    });
+
+    statusRepo.textContent =
+      `${repos.length} repositori yang terakhir diperbarui:`;
+
+  } catch (error) {
+
+    statusRepo.textContent =
+      "Maaf, daftar repositori gagal dimuat. Periksa username atau coba lagi nanti.";
+
+    console.error("Error GitHub:", error);
+
+  }
+}
+
+if (daftarRepo && statusRepo) {
+  ambilRepo();
 }

@@ -1,0 +1,23 @@
+
+[
+  {
+    "nama": "HTML",
+    "level": "Menengah"
+  },
+  {
+    "nama": "CSS",
+    "level": "Menengah"
+  },
+  {
+    "nama": "JavaScript",
+    "level": "Dasar"
+  },
+  {
+    "nama": "Git dan GitHub",
+    "level": "Dasar"
+  },
+  {
+    "nama": "Canva",
+    "level": "Mahir"
+  }
+]
