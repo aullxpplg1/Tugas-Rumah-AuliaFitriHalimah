@@ -134,6 +134,12 @@ nav a:hover {
   flex-direction: column;
   margin-top: 0.5rem;
 }
+.tambah-skill {
+  padding: 0.5rem;
+  border: 1px solid #FFFFFF;
+  border radius: 6px;
+  margin: 1px 1px 1px 1px;
+}
 
 
 /* =================================
