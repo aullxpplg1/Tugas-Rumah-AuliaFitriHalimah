@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +10,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="css/style.css">
+  <script src="main.js" defer></script>
 </head>
 
 <body>
@@ -61,11 +63,7 @@
       <!-- HERO -->
       <section class="hero">
 
-        <img
-          src="img/foto-profil.jpeg"
-          alt="Foto profil Aulia Fitri Halimah"
-          width="180"
-        >
+        <img src="img/foto-profil.jpeg" alt="Foto profil Aulia Fitri Halimah" width="180">
 
         <div>
           <h2>Halo, saya Aulia!</h2>
@@ -131,13 +129,40 @@
         <section class="kartu">
           <h2>Keahlian</h2>
 
-          <p id="jumlah-skill"></p>
-          <div class="tambah-skill">
-            <select id="skill-baru">Keahlian baru</select>
-            <label for="level"></label>
-            <button id="tombol-skill">Tambah Keahlian</button>
-            <button id="pesan-skill">Keterangan</button>
-          </div>
+          <section class="kartu skill-section">
+            <div class="skill-header">
+              <div>
+                <h2>Keahlian</h2>
+                <p>Berikut adalah kemampuan yang sedang saya pelajari dan kembangkan.</p>
+              </div>
+            </div>
+
+            <!-- FORM TAMBAH KEAHLIAN -->
+            <div class="skill-form">
+              <div class="form-group">
+                <label for="skill-baru">Pilih Keahlian</label>
+                <select id="skill-baru">
+                  <option value="">-- Pilih Keahlian --</option>
+                  <option value="HTML">HTML</option>
+                  <option value="CSS">CSS</option>
+                  <option value="JavaScript">JavaScript</option>
+                  <option value="Git dan GitHub">Git dan GitHub</option>
+                  <option value="Canva">Canva</option>
+                </select>
+              </div>
+
+              <button type="button" id="tombol-skill">
+                + Tambah Keahlian
+              </button>
+            </div>
+
+            <!-- DAFTAR KEAHLIAN -->
+            <div class="skill-list">
+              <h3>Daftar Kemampuan Saya</h3>
+              <ul id="daftar-skill"></ul>
+            </div>
+          </section>
+
 
           <!-- Daftar keahlian akan diisi JavaScript -->
           <ul id="daftar-skill"></ul>
@@ -211,11 +236,6 @@
     </div>
   </main>
 
-
-  <!-- JAVASCRIPT -->
-  <script src="js/main.js" defer></script>
-
-
   <!-- FOOTER -->
   <footer>
 
@@ -234,4 +254,5 @@
   </footer>
 
 </body>
+
 </html>

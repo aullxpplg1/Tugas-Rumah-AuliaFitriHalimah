@@ -257,3 +257,112 @@ async function ambilRepo() {
     console.error(error);
   }
 }
+
+
+// =============================
+// KEAHLIAN DINAMIS
+// =============================
+
+// Mengambil elemen HTML
+const pilihanSkill = document.getElementById("skill-baru");
+const tombolSkill = document.getElementById("tombol-skill");
+const DaftarSkill = document.getElementById("daftar-skill");
+
+// Data awal keahlian
+let dataSkill = [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Git dan GitHub",
+    "Canva"
+];
+
+// Fungsi menampilkan keahlian
+function tampilkanSkill() {
+    daftarSkill.innerHTML = "";
+
+    dataSkill.forEach((skill, index) => {
+
+        // Membuat elemen list
+        const item = document.createElement("li");
+        item.classList.add("skill-item");
+
+        // Membuat informasi keahlian
+        const informasi = document.createElement("div");
+        informasi.classList.add("skill-info");
+
+        const nama = document.createElement("strong");
+        nama.textContent = skill;
+
+        informasi.appendChild(nama);
+
+        // Membuat tombol hapus
+        const tombolHapus = document.createElement("button");
+        tombolHapus.textContent = "Hapus";
+        tombolHapus.classList.add("hapus-skill");
+        tombolHapus.type = "button";
+
+        // Event untuk menghapus keahlian
+        tombolHapus.addEventListener("click", function () {
+            hapusSkill(index);
+        });
+
+        // Menggabungkan elemen
+        item.appendChild(informasi);
+        item.appendChild(tombolHapus);
+
+        daftarSkill.appendChild(item);
+    });
+}
+
+// Fungsi menambahkan keahlian
+function tambahSkill() {
+
+    const skillBaru = pilihanSkill.value;
+
+    // Memeriksa apakah pilihan kosong
+    if (skillBaru === "") {
+        alert("Silakan pilih keahlian terlebih dahulu!");
+        return;
+    }
+
+    // Memeriksa keahlian yang sudah ada
+    if (dataSkill.includes(skillBaru)) {
+        alert("Keahlian tersebut sudah ada!");
+        return;
+    }
+
+    // Menambahkan ke dalam array
+    dataSkill.push(skillBaru);
+
+    // Memperbarui tampilan
+    tampilkanSkill();
+
+    // Mengembalikan pilihan ke awal
+    pilihanSkill.value = "";
+
+    alert("Keahlian berhasil ditambahkan!");
+}
+
+// Fungsi menghapus keahlian
+function hapusSkill(index) {
+
+    const konfirmasi = confirm(
+        "Apakah kamu yakin ingin menghapus keahlian ini?"
+    );
+
+    if (konfirmasi) {
+
+        // Menghapus data berdasarkan index
+        dataSkill.splice(index, 1);
+
+        // Memperbarui daftar keahlian
+        tampilkanSkill();
+    }
+}
+
+// Event tombol tambah keahlian
+tombolSkill.addEventListener("click", tambahSkill);
+
+// Menampilkan keahlian saat halaman dibuka
+tampilkanSkill();
